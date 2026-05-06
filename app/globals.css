@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --white:         #ffffff;
+  --off-white:     #f8f8f6;
+  --near-black:    #111111;
+  --olive:         #5c6e44;
+  --olive-light:   #8fa876;
+  --olive-dark:    #3d4d2c;
+  --charcoal:      #44443e;
+  --mid-grey:      #88887e;
+  --line:          #e0e0dc;
+  --line-dark:     #c8c8c4;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-white:        var(--white);
+  --color-off-white:    var(--off-white);
+  --color-near-black:   var(--near-black);
+  --color-olive:        var(--olive);
+  --color-olive-light:  var(--olive-light);
+  --color-olive-dark:   var(--olive-dark);
+  --color-charcoal:     var(--charcoal);
+  --color-mid-grey:     var(--mid-grey);
+  --color-line:         var(--line);
+  --color-line-dark:    var(--line-dark);
+
+  --font-heading: var(--font-space-grotesk), "Arial", sans-serif;
+  --font-body:    var(--font-inter), "Helvetica Neue", sans-serif;
+
+  --animate-marquee: marquee 50s linear infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--white);
+  color: var(--near-black);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
 }
